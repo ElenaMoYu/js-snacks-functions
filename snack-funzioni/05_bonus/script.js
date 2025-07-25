@@ -7,24 +7,21 @@ e buonasera se è sera (oltre le 17)
 
 const nome = "Mario";
 
-// Dichiara la funzione qui.
-
 function askTime() {
   const WhatTimeIsIt = Number(prompt("What time is it?"));
   if (isNaN(WhatTimeIsIt) || WhatTimeIsIt < 0 || WhatTimeIsIt > 23) {
+    alert("Inserisci un orario valido (0-23)");
     return askTime();
   } else {
-    if (WhatTimeIsIt > 4 && WhatTimeIsIt < 13) {
+    if (WhatTimeIsIt >= 5 && WhatTimeIsIt < 13) {
       return `Buongiorno ${nome}`;
-    } else if (WhatTimeIsIt > 12 && WhatTimeIsIt < 17) {
+    } else if (WhatTimeIsIt >= 13 && WhatTimeIsIt < 17) {
       return `Buon pomeriggio ${nome}`;
     } else {
-      return `Buona seeeeera ${nome}`;
+      return `Buonasera ${nome}`;
     }
   }
 }
-
-// Invoca la funzione qui e stampa il risultato in console
 
 console.log(askTime());
 
